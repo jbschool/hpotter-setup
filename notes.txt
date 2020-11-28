@@ -1,0 +1,24 @@
+Install Raspberry Pi OS using Raspberry Pi Imager
+https://downloads.raspberrypi.org/imager/imager_1.4.dmg
+
+https://www.raspberrypi.org/software/operating-systems/
+Raspberry Pi OS with desktop
+Release date: August 20th 2020
+Kernel version: 5.4
+Size: 1,127MB
+https://downloads.raspberrypi.org/raspios_armhf/images/raspios_armhf-2020-08-24/2020-08-20-raspios-buster-armhf.zip
+
+change password for user pi
+
+https://www.raspberrypi.org/forums/viewtopic.php?t=169212
+force password for pi user sudo
+sudo mv /etc/sudoers/010_pi-nopasswd ~/Desktop
+sudo echo pi ALL=(ALL) PASSWD: ALL > /etc/sudoers.d/101_pi-passwd
+sudo chmod 0440 101_pi-passwd
+
+https://www.raspberrypi.org/documentation/linux/usage/users.md
+add user and add them to sudoers list
+sudo adduser bob
+sudo adduser bob sudo
+
+
