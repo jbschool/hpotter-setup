@@ -21,4 +21,5 @@ add user and add them to sudoers list
 sudo adduser bob
 sudo adduser bob sudo
 
-
+Install docker
+https://phoenixnap.com/kb/docker-on-raspberry-pi
