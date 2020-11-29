@@ -4,12 +4,14 @@ These instructions demonstrate how to configure [HPotter](https://github.com/drs
 
 ## Particulars
 
-- Targets commi [2a5a3d0](https://github.com/drsjb80/HPotter/tree/2a5a3d014c33da3fb024febc46617d08d307fb60) on master: 
+- Targets commit [2a5a3d0](https://github.com/drsjb80/HPotter/tree/2a5a3d014c33da3fb024febc46617d08d307fb60) on master: 
 - Uses [Raspberry Pi Zero W](https://www.raspberrypi.org/products/raspberry-pi-zero-w) purchased in Jan 2020 with
-    - Raspberry Pi OS (32-bit) (aka Raspbian Buster)
-    - A port of Debian with the Raspberry Pi Desktop 
-    - Released: 2020-08-20
-    - Flashed using [Raspberry Pi Imager v.14](https://www.raspberrypi.org/software/)
+
+    Raspberry Pi OS (32-bit) (aka Raspbian Buster)
+
+    Released: 2020-08-20
+    
+    Flashed using [Raspberry Pi Imager v1.4](https://www.raspberrypi.org/software/)
 
 ## Raspberry Pi Zero W Setup
 
