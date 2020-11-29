@@ -10,7 +10,7 @@ These instructions demonstrate how to configure [HPotter](https://github.com/drs
     Raspberry Pi OS (32-bit) (aka Raspbian Buster)
 
     Released: 2020-08-20
-    
+
     Flashed using [Raspberry Pi Imager v1.4](https://www.raspberrypi.org/software/)
 
 ## Raspberry Pi Zero W Setup
@@ -90,4 +90,5 @@ sudo docker pull apcheamitru/arm32v6-mariadb:latest
   ```
 
 - Run HPotter
-  `python3 -m hpotter`
+  `sudo python3 -m hpotter`
+  
