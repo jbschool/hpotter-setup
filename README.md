@@ -90,5 +90,5 @@ sudo docker pull apcheamitru/arm32v6-mariadb:latest
   ```
 
 - Run HPotter
+
   `sudo python3 -m hpotter`
-  
