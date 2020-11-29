@@ -21,9 +21,10 @@ Make the Pi a little more secure following advice from [Securing your Raspberry 
     sudo usermod -a -G adm,dialout,cdrom,sudo,audio,video, \
         plugdev,games,users,input,netdev,gpio,i2c,spi alice
     sudo su - alice
-    sudo pkill -u pi
+    sudo pkill -u pi # logs out; log back in as newly created user
     sudo deluser pi
     sudo deluser -remove-home pi
+    sudo rm /etc/sudoers.d/010_pi-nopasswd
 
 ### Update Software
 
