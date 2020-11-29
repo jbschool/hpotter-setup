@@ -21,10 +21,27 @@ add user and add them to sudoers list
 sudo adduser bob
 sudo adduser bob sudo
 
+
+Securing your Raspberry Pi
+https://www.raspberrypi.org/documentation/configuration/security.md
+
+Passwordless SSH access
+https://www.raspberrypi.org/documentation/remote-access/ssh/passwordless.md
+
+Updating and upgrading Raspberry Pi OS
+https://www.raspberrypi.org/documentation/raspbian/updating.md
+
+17 security tips for your Raspberry Pi
+https://raspberrytips.com/security-tips-raspberry-pi/
+
 Install docker
 https://phoenixnap.com/kb/docker-on-raspberry-pi
 https://docs.docker.com/engine/install/debian/
 
+docker pull apcheamitru/arm32v6-mariadb:latest
+busybox:latest
+alpine:latest
+arm32v6/httpd:alpine
 
 sudo vi /etc/apt/sources.list
 deb [arch=armhf] https://download.docker.com/linux/raspbian buster stable
