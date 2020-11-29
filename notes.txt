@@ -23,3 +23,8 @@ sudo adduser bob sudo
 
 Install docker
 https://phoenixnap.com/kb/docker-on-raspberry-pi
+https://docs.docker.com/engine/install/debian/
+
+
+sudo vi /etc/apt/sources.list
+deb [arch=armhf] https://download.docker.com/linux/raspbian buster stable
