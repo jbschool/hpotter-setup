@@ -33,6 +33,13 @@ Per [Updating and upgrading Raspberry Pi OS](https://www.raspberrypi.org/documen
     sudo apt update
     sudo apt full-upgrade
 
+### Get HPotter
+
+    git clone https://github.com/drsjb80/HPotter.git
+    cd HPotter
+    git checkout 2a5a3d0 # instructions for this version
+    sudo pip3 install -r requirements.txt
+
 ### Install Docker
 Based on the [Docker Debian Install Instructions](https://docs.docker.com/engine/install/debian/)
 
@@ -44,6 +51,41 @@ Based on the [Docker Debian Install Instructions](https://docs.docker.com/engine
 
     `deb [arch=armhf] https://download.docker.com/linux/raspbian buster stable`
 
-    and save the file. Then install
+    and save the file
+- Install docker tools:
 
-    `sudo apt install docker-ce docker-ce-cli containerd.io`
+    ```
+    curl -fsSL https://download.docker.com/linux/raspbian/gpg | sudo apt-key add -
+    sudo apt update
+    sudo apt install docker-ce docker-ce-cli containerd.io
+    ```
+
+Note that the Pi Zero W has arm32v6 architecture so the test hello-world container will not work since no image for this architecture is currently available.
+
+### Get Docker Containers
+
+Special containers that work on the Pi Zero W's arm32v6 architecture are required. You can search the HPotter code to see which images are currently required.
+
+```
+grep -rnw . -e 'arm32v6' # in HPotter directory
+
+HPotter/hpotter/env.py:21:machine = 'arm32v6/' if platform.machine() == 'armv6l' else ''
+HPotter/hpotter/plugins/httpipe.py:29:            container = 'arm32v6/httpd:alpine'
+HPotter/hpotter/plugins/mariadb.py:29:            container = 'apcheamitru/arm32v6-mariadb:latest'
+```
+
+Get the required containers locally
+```
+sudo docker pull arm32v6/httpd:alpine
+sudo docker pull apcheamitru/arm32v6-mariadb:latest
+```
+
+### Run HPotter
+- Add the httpipe module to the plugins list to run
+  ```
+  # in HPotter directory
+  echo "__all__ = ['mariadb', 'httpipe']" > ./hpotter/plugins/__init__.py
+  ```
+
+- Run HPotter
+  `python3 -m hpotter`
