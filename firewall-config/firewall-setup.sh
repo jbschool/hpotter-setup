@@ -4,7 +4,7 @@
 
 if [ $(id -u) -ne 0 ]
     then echo run with sudo \(iptables command required root privileges\)
-    exit
+    return 1 
 fi
 
 
