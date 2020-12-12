@@ -82,6 +82,27 @@ sudo docker pull arm32v6/httpd:alpine
 sudo docker pull apcheamitru/arm32v6-mariadb:latest
 ```
 
+### Configure the Firewall To Reduce Risk
+
+Run firewall-setup.sh to configure the firewall to reduce risk when running HPotter. The script must be run with root privileges.
+1. Inspect/modify the HPOTTER_PORTS variable in firewall-setup.sh to ensure correct ports will be opened for the HPotter modules desired.
+1. Run the script as root, e.g.
+    ```
+    chmod +x firewall-setup.sh
+    sudo ./firewall-setup.sh
+    ```
+    or
+    ```
+    sudo source firewall-setup.sh
+    ```
+
+NOTE that backups of the iptables and ip6tables configurations is saved to `./iptables-config-backup/`. Restore the saved configurations with
+
+```
+sudo iptables-restore < iptables-config-backup/<filename-of-backup>
+sudo ip6tables-restore < iptables-config-backup/<filename-of-backup>
+```
+
 ### Run HPotter
 - Add the httpipe module to the plugins list to run
   ```
